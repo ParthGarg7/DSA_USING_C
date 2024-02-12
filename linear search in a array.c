@@ -11,7 +11,8 @@ int scan()
     while (scanf("%d", &value) != 1 || value <= 0)
     {
         printf("Invalid input. Please enter a positive integer: ");
-        while ((ch = getchar()) != '\n' && ch != EOF);
+        while ((ch = getchar()) != '\n' && ch != EOF)
+            ;
     }
 
     return value;
@@ -26,7 +27,8 @@ int scan2()
     while (scanf("%d", &value) != 1)
     {
         printf("Invalid input. Please enter a integer: ");
-        while ((ch = getchar()) != '\n' && ch != EOF);
+        while ((ch = getchar()) != '\n' && ch != EOF)
+            ;
     }
 
     return value;
@@ -38,7 +40,7 @@ void linear_search(int *array, int size)
     int value, i, counter;
 
     int location[size];
-    
+
     printf("Enter the value you want to search in the array\n");
     value = scan2();
 
@@ -148,6 +150,8 @@ int main()
         {
             // Code for exiting the program
             printf("Exiting\nThank you %c", 2);
+            // Free the allocated memory
+            free(array);
             exit(0);
         }
 
@@ -157,9 +161,6 @@ int main()
             break;
         }
     }
-
-    // Free the allocated memory
-    free(array);
 
     return 0;
 }
