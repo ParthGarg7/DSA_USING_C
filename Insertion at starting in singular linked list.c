@@ -102,14 +102,9 @@ int Dynamic_List()
             }
             else
             {
-                // Traverse to the end of the list
-                temp = head;
-                while (temp->next != NULL) // method 2
-                    temp = temp->next;     // temp->next = newnode;
-                                           // temp = newnode
-
-                // Link the new node to the end of the list
-                temp->next = new_node;
+                // Link the new node to the starting of the list
+                new_node->next = head;
+                head = new_node;
             }
         }
         else if (choice1 == 'N' || choice1 == 'n')
@@ -168,14 +163,9 @@ int Static_List()
         }
         else
         {
-            // Traverse to the end of the list
-            temp = head;
-            while (temp->next != NULL) // method 2
-                temp = temp->next;     // temp->next = newnode;
-                                       // temp = newnode
-
-            // Link the new node to the end of the list
-            temp->next = new_node;
+            // Link the new node to the starting of the list
+            new_node->next = head;
+            head = new_node;
         }
     }
 }
@@ -189,11 +179,11 @@ void main()
     head = NULL;
     temp = head;
 
-    printf("Hi this is a program of Insertion of node in the ending of the singular linked list\n\n");
+    printf("Hi this is a program of Insertion of node in the starting of the singular linked list\n\n");
 
     while (1)
     {
-        printf("Press 0 for exit\n");
+        printf("\nPress 0 for exit\n");
         printf("Press 1 for new Static size list\n");
         printf("Press 2 for new Dynamic size list\n");
 
@@ -203,13 +193,8 @@ void main()
         {
         case 0:
         {
-            // for printing the final linked list
-            printf("\n\tHere is the final list\n\t");
-            Print_List();
-
-            // Free the allocated memory for each node
-            Free_list();
-
+            // Printing a message on the end of the program
+            printf("Exiting Thank you %c", 2);
             exit(0);
         }
         break;
